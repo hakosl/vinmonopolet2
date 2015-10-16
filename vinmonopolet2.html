@@ -1,0 +1,105 @@
+<head>
+  <meta charset="Windows 1252">
+  <title>Vinmonopolet 2.0</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+  <div class="outer-container">
+  
+
+  <div class="">
+    <table class="flatTable sticky-header">
+    <thead class="floating-thead">
+    <tr class="titleTr">
+      <th class="titleTd">
+        <h1>Vinmonopolet 2.0 <button type="button" data-toggle="popover" title="Informasjon" data-container="body" data-content="Vinmonopolet 2.0 er en nettside laget av Håkon Osland, der du kan sortere alkoholinnholdige drikkevarer fra www.vinmonopolet.no etter hvor billige de er for alkohol per literpris. Nettsiden er laget ved hjelp av produktvarefilen fra vinmonopolet.no sin datadelingside, og ved hjelp av MeteorJS. takk til: Icons made by SimpleIcon: flaticon.com/authors/simpleicon for iconer." data-placement="bottom" class="info-popover"><i class="fa fa-info-circle info-circle"></i></button></h1>
+      </th>
+      <th>
+        {{#if notbeer}}
+        <img class="beer alcohol-image pull-right" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACoklEQVRYR+2XS3ISURSG/7+DFo8QYWLJQ4IrMI4cShZgGVcQXIFJlfMkI4fiBpQVKJk5E92AZAdASFPlBIwlqUqF/q3b0FTnQTqdhMSBZ0RVX8797nkfIkC63W5xOJxL5fP3G93dbmkobRAoSerTsirx+ej7dDrdD9Iz7Tunfei0u2VKGyCKJ88I+EahCGIRUsOyrLXofHTnMiBnAnR27QqF1xJ+WURNUhNgWUAKc5GSsYaBstt2VcCq+X1ZixwD6PV6qYP9g1URFUE7iWS85H9Vp/NzybvcXGrOD/YHayMLsexaZCwCKolkbCvIKhMA42vn0PkMcsl9EfgqX8hUL+pbA/Pn90ENRANSieBjAfV8Ibt8no4JgGdOCuuxhVg1iDwIzNNnkcuZh5l6YBB2WnYfVDNfyLkWuKqYjHGkr5C2cou5zQsBEOjlFrOPzJ9dL1xWImjpUCsi3gW5cuICL/IhNM9KvTAsJiPGgcnEQqx4njsnAKMgGtRN8ADYtshKmEu9s0NTH6QKiXuyIk/8WXOWvmNpuNfa2wS5ERQ4QWCdtl0n8CxXyE4tdJ6OfxfAcZynAOJBrz1VpuciX+AM317ZAkPH+UQyHRoAfAPouQEAVBVYJNSk2OBdbmcymaZf51QXXA/AcXw3O2it+yvsjQJ4OP4gnymAPwvc9g59HENs5wrZFbeF+Y3kT8PrcMHJNNxr2zUAL8yd3rebBRjXmf8At2eB24wBu2WvmfZ8o1kwrYr6u+RMs+BUnxhN2eVsIWvS0ZXZAkhb3kWi1Uwko7WTw8lMAa40D8yiEoaaiG4VgMBLB3hgCdGw8wDu4LtzpA9mtgztArN60Tn6MerbdPe/sEIpNd6uJh3vPB2nhsbxVrzp3/PCQpipOp6MlS+yXf0FfTbdMAer+bsAAAAASUVORK5CYII="/>
+        {{/if}}
+        {{#if beer}}
+        <img class="beer alcohol-image-clicked pull-right" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACk0lEQVRYR+2XP3MSQRjGn/eOAmzEzk78BMbKUmicOWccwwi2OcFeMmMPqSw9e0FqiQYaLmMD+gUk3wA/gVgZR+4eZ48cswmB4wgkOuNWN+zy7m+fff+tIGLYB24Gv8108+mDwfOWm6WgCiBLcAQRxzeSb5r53CjKzrx5mTdR+uDaIKoCZM6uIflZRP0ut0AOfBMVSupoFZBzAcr7XQeQFyB+QNAmMRShDUrao5lVaiio8r7bBLCjvldV5BSAfdBLm96vHYAOgSPfTGb1U9nvP22Fm6tN1XpjfFxR3wGgUuRkkHT8RGovSpUpgLprc8wDiGwFJxI8azyx1AmXGhOYn20RDAjJCnAHQL9esHKLDEwBQjlJ7vqJVDOKPIoqtCdE7m3R6kc6YbnljigYNgpWoMBFx0nE9EjsNYpWbVmA742CdVv92TPJVSEo8s0Yc1tEXkddpXYFE88nMDwv9OLABBGhHJMiXiKZWXSdmhP20oZ33A+ch+gI4MTZNFzrG8iIDweC655v3tWj5jx7p8Kw1HJrIqhGOU4UWKnV7YvI/XrBmpvoQht/LwDBexBcizrtTJr25RDCVxdWgOBHiNyIDUC+BPBIARBoKoeeOLYMPJOdZt4a6jbnXsE6AGbUmVTQXT3DXirA1PG07LhRAD0KVHkX4l0AQXTqRWs7yBW6THoYruMKzoZhueW2IXis9gznLhUgPOB/gCtT4Ep9oNTqVlR5vtQomJdF9Sq50SiYAQi6bNr1wsN2ZDVcRx5Q7dgUwsDQN5Lts83JRhW4UD+wDgX+XQCAecK4CfrJ2P2AYXwRsqF6y9gKqKeXaXhfVVerGoi4m09inOngdaVVvEV2ZprGSdlkTX/nxQYhOl4iaS/zuvoDJXzxMLWXasQAAAAASUVORK5CYII="/>      
+        {{/if}}
+      </th>
+      <th style="margin: auto;">
+        {{#if notredWine}}
+        <img class="redWine alcohol-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADMUlEQVRYR72Wb1LaYBDGnw0ww5/BypfOEBHxBHID6QmkJ2g8gfQE6gmkJyg9gbmB9ATiCRSEMNMvoAgyAu92NhjMRCCJreYTw/tm97e7z+6G8J+eXq+3OXoYHzFzCcxFIphb+a1DP/Pkd8HvXBwPB4/HBFRe3+WaH8Q/AbTbf4o0m56DUBDnBPwCYCoteoPZtE6ET8B6iDcDtFtdA6zOiGiTgd+RGBnZbPbGyYLABYF4E4DVssoMnDtR63ndWFaqIBChAeZGJxcSOTG+6zt6dZ1O/CBCA3Sa1rXUXOq9KnIv0DqIUACdZucERMcMvsrlt4p+HeI+XwURCqDd7PQk9RrRl+x2th4GQO4ugwgMIKon8E9RfC6vl5alOZf73PCD8kIEBui0LBPAAYMOc/lszXHUue0es1IVycz8P65pMe3U3ZJeqO5tt6SYL5hxFxig3bLqBOxL+mcsIlT7zCi/OPa6YYE0tZh2FY/H++OH8R4rLioNuxqjLm0s2QwM0GlaNyDsaDHaVU9cl99+6V52LgEws8HAN2njwADuDChmmfsHYQGciakmfC3vJtOJTHCAW6tKjCMm/ABTQwQZBkDqndpIFEb3owsQFcVObluvBAZ4EQ73UxvJ3eFgVCfQXhAIcY5ItERqcgSQAUYzuZEoZjKZfmAAu4+fhSj0kShVZ0/cmG+8NQ+jyZFo2XHuwDgtGw5A1q+aXtrNBjqMxFCfTZS5KhMyrhPpRGU0GJ3Zkc9X9lc9r0tL208oAPur5/7x0tn/DFRT6cTpcDAuE7gMhtRWuqUBitYiPNtUSp3ZNWfcaQTD7TwUwNz5XEBSQ6cNmbkPolqEyEQUTUyxM1MogNggwJ6YsjugxYxlkzJQBtzOxVgqnSwNh5MC1LQqw2mVAuyogZN1K5vk40IMeFPjGF3mXNTrnNuznaei7CIxClICAvoMMt0jexUkdVoWO6LyvuDnPEgL+t0hZ8t5IT7C+UKEXohUOm4uJtZzzd1p94sqzPlChG4IsN1KBUdw7+X8VRt6IBbjMkxEYe++asNVmghrOOj9pXPgIyFWDqKPglg7Cd0Qb/0S9iuF7yh2IN4L4C+ND/l8ey8GvwAAAABJRU5ErkJggg=="/>
+        {{/if}}
+        {{#if redWine}}
+        <img class="redWine alcohol-image-clicked" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADGElEQVRYR72WQVIaURCG/34zC1zFnEA8gXMDcZMq2AQrmG1GyF48gXoCyT4S3AYsZwVV2UBOIJ5AOEFgJVXyXqd6ZKjJODAzRmXJe/P+r7v/7vcIL/Rzr/ubysyOiFFgsAOQ16wUD5OOp6QNSeu+8Pz+hIjq0b0MtJIg/gvA/fnLUUpfE5BfiF8C7GljjyzSAxDeJUE8G6B61XPBfE6gTWb+bWxyW/vFUZAFgUsD8SyAWqdbBug6iPqiUnTjSpUGIjPAY9rn/UXkx82DUmOdT5IgMgNUO727Rc0vV0UeBVoHkQmg2u6dEuGEgdtmpegkdUh4fRVENoBO94+knhh73w+KgywAsjcOIjWAuJ4YP8TxzYNSIS7Nrc8fhklQUYjUALV2zwPhIxMOm5+KrUCoetU7AXNdMiP/Sd8bC2fhloxCfW33CkzogzFNDVBtdwdEtCvpNwp5MHYBLgfCcVOQmTy2+RbITYjvd5RRDmC2AQykjSWbqQFqne4IoC1tYdvSLAdsJaU7bl0CYILMjS/MfJwaIJwBBupSjqwAwcS0NO7kW23l3qcGqHW6DYCOAP7GREMxZCYAxlTbubw1v++DyJFzLiqlemqAwDgMnhhrY1vp2YCAnVQQIs5WQSl9RJD081hbG05rf2+SGkCEgjIIvbaoYc0xlBtvPQSPtbHLS/EFTNCymQD8Hlb6xm83wqFRGCgNb00mLrWVqys9O3+M3P9y/6JS8gLobADy+NCzm+D+Z+aGsTfOlJmVyaAMYocZIyIMtbFbNulNBp/7NWdMQeyGxQUiNYC8fEIGGgdtKJ4Ao8UWPCYaE/OWMiQPFInYn5hydxhjuXGTMhVAWNw/zMoV8PCQVzRvyHBa6QHGlMGn665senxcANHULF82ocgDcXHvct33xdxlhkOEvF8C0IQVvPDIXgVJtU6PA1NFP4iLPCyeqgUTNlFwy0Uh3kJ8acIohFE5LzBcXNpfIvInbfgPBKSOyL+2+JM2DEOEx+VLRhw960kbrvLEa0HEzoG3hFg5iN4KYu0kDEM89yWcVLrEURxAvBbAX+9J6N2Nc433AAAAAElFTkSuQmCC"/>
+        {{/if}}
+      </th>
+      <th>
+        {{#if notsprit}}
+        <img class="liqour alcohol-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABd0lEQVRYR+1XW07CUBA9oz+AivTTlpS4AtmB7EDZAe6AHQAr0B3IEnAHuAJ1Ca19JP60xkf4kI7pR5tLUTK3ERKT9rOZOXPu6dwzU0KJx3PDAZAMAYqzdGKeWx1rrAtHuglpvOcG87Zt9tTcn95JsEsT2CcaqQWWzJMiqa0SIOBcLcDAfUWgUmB3CjhBTITjYpc3juqGYRi5N2zlFviOP0bhCiqFZpZt9iWFcwPTCfa8ly4lXw+bcgjom7Y5k+JqGZHn+o8EOtsEzszxQbNxKv0UYgKp/xP4VnIyBl217ZOpJFZMwHeDVNYLCSiAO8s2LyWxYgLpsFmzX8YrATEInbK2XJ4Aw2k069208Mfb51ztDZ25oEVAPeUecJN1e/gc9pbMK7uA1JS0CEhBdXaDikClwP9SQF1Ea4e1p8zvoyhqLd4X+YzQWVC1FFhxQuZJ9h8QOMGQCdeZT2zNiNatmAZEScyMKRG1dk7gt2GzMwUqApUCf6HAN7RC/iGhMevxAAAAAElFTkSuQmCC"/>
+        {{/if}}
+        {{#if sprit}}
+        <img class="liqour alcohol-image-clicked" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABfElEQVRYR+2XTU7CUBSFz6ETOxJXYFyB7EAcwkQbYV6LC2AH4gp0A62MrcY6oYkT6wrUJbiDOtJJe0ljkAcSeA8CxqQdNvfn4/DeubfEEo93F7sQdCGSjtOZBO1Gz7QcTROKeC8cJEG7WVdzZ73Tqb00gFg4Vxsww8U01FoBSB6oDUTkuQQoFdiYAp0wTkFsT5/yzNra6TuHijcsvgfG19AL4x45eQXHbSTyW01ncVvFvkyC3ZvHmlXJXubniOO3mpFuXSMFvNv4lcD+vOICSXPL3tP9K7QBCv+n4FrnlwlxGpw0+jqx2gCdMI5AHOkUheDBbzeOdWK1AYphM22/EHyAxUTk7rK2vAKAvGeWXSsaV7KvRD0bJnPBCGBi+hFXo9N+Fsb1HDKxC+iakhGAblGT3aAEKBX4Xwqoi6jQfhv5vXv/VKV8/swIkwXVSAHVCUWKLfj7O8ALB12SlyOfWJsR/bJiwM2FKZn3CVb/AmDmvNmkAiVAqcDKCgwBjoQZMLaHT+sAAAAASUVORK5CYII="/>
+        {{/if}}
+      </th>
+      <th>
+        <div class="hvitvin alcohol-image text-center {{#if hvitvin}} clicked {{/if}} {{#if nothvitvin}} notClicked {{/if}}">
+          22
+        </div>
+      </th>
+    </tr>
+    <tr class="headingTr">
+      <th>
+        Varenavn
+      </th>
+      <th>
+        <span class="pull-right">Pris</span>
+      </th>
+      <th>
+        <span>Volum</span>
+      </th>
+      <th>
+        Alkohol
+      </th>
+      <th>
+        Alkohol per literpris
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each products}}
+    <tr>
+      <td>
+        {{ Varenavn }}
+      </td>
+      <td>
+         <span class="pull-right">{{ Pris }} KR</span>
+      </td>
+      <td>
+        {{ Volum }} <span class="pull-right"> Liter</span>
+      </td>
+      <td>
+        {{ Alkohol }}%
+      </td>
+      <td>
+        {{ Alkoholperliterpris }}
+     </td>
+    </tr>
+    {{/each}}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5">
+          <form action="https://github.com/hakosl">
+            <button class="btn bottom-links more-drinks"><b>Last in flere</b></button>
+            <button class="btn bottom-links github-link" type="submit"><i class="fa fa-github-alt"></i></button>
+          </form>
+        </td>
+      </tr>
+    </tfoot>
+    </table>
+  </div>
+  </div>
+  </div>
+</body>
+
+
