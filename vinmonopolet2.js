@@ -22,7 +22,7 @@ if (Meteor.isClient) {
     });
   })
 
-  
+
   Template.body.onRendered(function(){
     $(function () {
       $('[data-toggle="popover"]').popover();
@@ -103,9 +103,10 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.methods({
     "restartDatabase": function(){
-      var url = "http://www.vinmonopolet.no/api/produkter";
+      var url = "https://www.vinmonopolet.no/medias/sys_master/products/products/hbc/hb0/8834253127710/produkter.csv";
       var npmEncoding = Meteor.npmRequire("encoding");
       getFile(url, function(error, result){
+        console.log(error);
         //turn the file into utf-8 and replace all the commas with full stops
         var bufferedString = npmEncoding.convert(result.content, "ASCII", "win1252");
         var deEncodedString = bufferedString.toString('ASCII');
@@ -118,7 +119,13 @@ if (Meteor.isServer) {
         console.log("ok then");
       });
     }
-  })
+  });
+
+    Meteor.startup(function() {
+      if(Drinks.find({}).count() === 0) {
+        Meteor.call("restartDatabase");
+      }
+    });
 
   Meteor.publish("drinks", function(category, drinksLimit){
     if(category === "Lik?r under 22 %"){
@@ -175,6 +182,6 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
 
-    
+
   });
 }
